@@ -1,0 +1,72 @@
+<template>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-3">1</div>
+            <div class="col-xs-12 col-md-3">2</div>
+            <div class="col-xs-12 col-md-3">3</div>
+            <div class="col-xs-12 col-md-3">4</div>
+
+        </div>
+    </div>
+    <div id="router_vedio">
+        <article>
+            <div class="player">
+                <div class="m">
+                    <video id="my-video" class="video-js" controls preload="none" width="500" height="264"
+                           poster="" data-setup="{}">
+                        <source id="source" src="" type="video/mp4">
+                        <p class="vjs-no-js">
+                            To view this video please enable JavaScript, and consider upgrading to a web browser that
+                            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                        </p>
+                    </video>
+                </div>
+
+                <div id="vedio-btn-all" class="vedio-btn-all">
+                    <ul id="vedio-play-list">
+                        <li><a href="#" class="vedio-btn" data-id="../fileup/img/3.mp4">点击播放2</a>
+                        </li>
+                        <li><a href="#" class="vedio-btn" data-id="../fileup/img/4.mp4">点击播放3</a>
+                        </li>
+                        <li><a href="#" class="vedio-btn" data-id="../fileup/img/5.mp4">点击播放4</a>
+                        </li>
+                        <li><a href="#" class="vedio-btn" data-id="../fileup/img/6.mp4">点击播放5</a>
+                        </li>
+                        <li><a href="#" class="vedio-btn" data-id="../fileup/img/7.mp4">点击播放2</a>
+                        </li>
+                        <li><a href="#" class="vedio-btn" data-id="../fileup/img/8.mp4">点击播放3</a>
+                        </li>
+                        <li><a href="#" class="vedio-btn" data-id="../fileup/img/9.mp4">点击播放4</a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </div>
+    <script>
+        var vedioSource = document.getElementById('source');
+        var my_video_html5_api = document.getElementById('my-video_html5_api');
+        console.log(my_video_html5_api);
+        vedioSource.setAttribute('src', sessionStorage.getItem('mp4'));
+        var myPlayer = '';
+        function playVideo(url) {
+            myPlayer = videojs('my-video');
+            videojs("my-video").ready(function () {
+                var myPlayer = this;
+                myPlayer.src(url);
+                myPlayer.load(url);  //使video重新加载
+                myPlayer.play();
+            });
+        }
+        var vedioTotal = document.querySelector('#vedio-btn-all');
+        vedioTotal.addEventListener('click', function (e) {
+            if (e.target.getAttribute('class') == 'vedio-btn')
+                var that = e.target;
+            console.log('123');
+            var vedioId = that.getAttribute('data-id');
+            playVideo(vedioId);
+        })
+    </script>
+</template>

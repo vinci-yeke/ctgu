@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Video.js 5.18.4</title>
+    <link href="css/video-js.css" rel="stylesheet">
+    <!-- If you'd like to support IE8 -->
+    <script src="lib/videojs-ie8.min.js"></script>
+    <link rel="stylesheet" href="./dist/common.css"/>
+    <link rel="stylesheet" href="./dist/player_page.css"/>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.lib for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.lib doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.lib/1.4.2/respond.min.js"></script>
+    <script src="./lib/video.min.js"></script>
+    <![endif]-->
+    <script src="./lib/vue.min.js"></script>
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/vue-router.js"></script>
+</head>
+<body>
+<!--头部标签-->
+<div id="vuemain">
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <router-link class="navbar-brand" to="/main-page">首页</router-link>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="text-center">
+                            <router-link to="/movie">视频库</router-link>
+                        </li>
+                        <li class=" text-center">
+                            <router-link to="/app_down">资源库</router-link>
+                        </li>
+                        <li class="text-center">
+                            <router-link to="/connect">联系我</router-link>
+                        </li>
+                        <li class=" more-tip dropdown text-center">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">更多 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="text-center"><a href="#">登录&nbsp;&nbsp;<span class="glyphicon glyphicon-user"></span></a>
+                        </li>
+                        <li class="text-center"><a href="#" class="up-load-file"><input type="file" class="up-file"/>上传&nbsp;&nbsp;<span
+                                class="glyphicon glyphicon-open"></span></a></li>
+                        <li class="dropdown text-center share">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">分享&nbsp;&nbsp;<span class="glyphicon glyphicon-share"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">新浪</a></li>
+                                <li><a href="#">QQ</a></li>
+                                <li><a href="#">微信</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="search-movie navbar-form navbar-right text-right">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="搜索">
+                            <button type="submit" class="btn btn-default btn-info">提交</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+
+    <!--vue路由渲染的路径-->
+
+    <!-- 主页面-->
+    <router-view></router-view>
+
+</div>
+
+
+<!--模版文件-->
+<template>
+
+
+</template>
+<template id="temp-main">
+    <div>
+        <div class="phone-search">
+            <div class="row">
+                <div class="col-lg-9"></div>
+                <div class="col-lg-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="搜索">
+      <span class="input-group-btn">
+        <button class="btn btn-info" type="button">提交</button>
+      </span>
+                    </div>
+                    <!-- /input-group -->
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <div class="jumbotron text-center">
+
+
+            <h1>你好, 世界</h1>
+
+            <p>...</p>
+
+            <p class="text-right"><a class="btn btn-info btn-lg" href="#" role="button">世界很大 我们需要去看看</a></p>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <div class="thumbnail">
+                        <img src="./img/intel.web.864.486.1.jpg" alt="...">
+
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+
+                            <p>...</p>
+
+                            <p class="text-right"><a href="#" class="btn btn-info " role="button">播放</a> <a href="#"
+                                                                                                            class="btn btn-danger"
+                                                                                                            role="button">下载</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <div class="thumbnail">
+                        <img src="./img/intel.web.864.486.2.jpg" alt="...">
+
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+
+                            <p>...</p>
+
+                            <p class="text-right"><a href="#" class="btn btn-info" role="button">播放</a> <a href="#"
+                                                                                                           class="btn btn-danger"
+                                                                                                           role="button">下载</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <div class="thumbnail">
+                        <img src="./img/intel.web.864.486.3.jpg" alt="...">
+
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+
+                            <p>...</p>
+
+                            <p class="text-right"><a href="#" class="btn btn-info" role="button">播放</a> <a href="#"
+                                                                                                           class="btn btn-danger"
+                                                                                                           role="button">下载</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</template>
+<template id="temp-vedio">
+    <div  id="files-list" class=" container-fluid">
+        <div class="row" v-for="file in file_movies">
+            <div class="col-xs-12 col-md-2"></div>
+            <div class="col-xs-12 col-md-2" v-bind:data-link="file.link">
+                <div class="panel panel-info">
+                    <div class="panel-heading">{{file.name}}</div>
+                    <div class="panel-body text-center"><img  class="" v-bind:src="file.img" alt=""/></div>
+                    <div class="panel-footer">{{file.intro}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template id="temp-app">
+    <div>2</div>
+</template>
+<template id="temp-connect">
+    <div>3</div>
+</template>
+
+<!-- 页脚标签-->
+<footer>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12  text-left">友情链接</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">1</div>
+                    <div class="col-xs-12 col-md-4">2</div>
+                    <div class="col-xs-12 col-md-4">3</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</footer>
+
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="./js/my_router.js"></script>
+</body>
+</html>

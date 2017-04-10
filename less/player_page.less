@@ -1,0 +1,76 @@
+body{
+  overflow-x: hidden;
+}
+
+.main {
+  //display: none;
+
+}
+article {
+  .player {
+    display: none;
+    .m {
+      float: left;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .vedio-btn-all {
+      float: left;
+      ul {
+        li {
+          a {
+            padding: 10px 5px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+}
+//小屏手机
+@media (max-width: 768px) {
+  header {
+    .up-load-file{
+      text-align: center;
+      .up-file {
+        opacity: 0;
+        position: absolute;
+        left: 45%;
+        z-index: 999;
+        width: 50px;
+      }
+    }
+  }
+  .search-movie {
+    display: none;
+  }
+  .nav .more-tip {
+    display: none ;
+  }
+  .nav .share{
+    display: none;
+  }
+}
+//小屏幕 平板
+@media (min-width: 992px) {
+  header{
+    .up-file{
+      opacity: 0;
+      position: absolute;
+      z-index: 999;
+      width: 50px;
+    }
+  }
+}
+//中等屏幕 桌面显示器
+@media (min-width: 1200px) {
+  .phone-search {
+    display: none;
+  }
+}
+
