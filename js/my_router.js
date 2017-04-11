@@ -1,67 +1,152 @@
 /**
  * Created by yk on 2017/4/9.
  */
-
-//    vueÂ·ÓÉÉèÖÃ
 console.log('-------------myrouter----------------------')
-//   1. ¶¨ÒåÂ·ÓÉ×é¼þ
-const Main = {template: '#temp-main'}
-const Movie = {template: '#temp-vedio'}
-const App_down = {template: '#temp-app'}
+//   1. åˆ›å»ºæ¨¡ç‰ˆ
+const Main = {
+    template: '#temp-main'
+}
+const Movie = {
+    template: '#temp-vedio',
+    data: function () {
+        return {
+            file_movies: [
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk1', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk2', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk3', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk4', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk5', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk6', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk7', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk8', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'},
+                {name: 'yk', img: './img/vans.jpg', intro: 'dsadasdas', link: '231'}
+            ]
+        }
+    }
+}
+const App_down = {template: '#temp-app',
+        data(){
+            return{
+                appSorts:[
+                    {name:'å­¦ä¹ ',list:[
+                        {id:'312',name:'aaa',href:''},
+                        {id:'',name:'bbb',href:''},
+                        {id:'',name:'ccc',href:''}
+                    ]},
+                    {name:'å¨±ä¹',list:[
+                        {id:'312',name:'aaa',href:''},
+                        {id:'',name:'bbb',href:''},
+                        {id:'',name:'ccc',href:''}
+                    ]},
+                    {name:'å·¥å…·',list:[
+                        {id:'312',name:'aaa',href:''},
+                        {id:'',name:'bbb',href:''},
+                        {id:'',name:'ccc',href:''}
+                    ]},
+                    {name:'å­¦ä¹ ',list:[
+                        {id:'312',name:'aaa',href:''},
+                        {id:'',name:'bbb',href:''},
+                        {id:'',name:'ccc',href:''}
+                    ]},
+                    {name:'å¨±ä¹',list:[
+                        {id:'312',name:'aaa',href:''},
+                        {id:'',name:'bbb',href:''},
+                        {id:'',name:'ccc',href:''}
+                    ]},
+                    {name:'å·¥å…·',list:[
+                        {id:'312',name:'aaa',href:''},
+                        {id:'',name:'bbb',href:''},
+                        {id:'',name:'ccc',href:''}
+                    ]},
+                    {name:'å­¦ä¹ ',list:[
+                        {id:'312',name:'aaa',href:''},
+                        {id:'',name:'bbb',href:''},
+                        {id:'',name:'ccc',href:''}
+                    ]},
+                    {name:'å¨±ä¹',list:[
+                        {id:'312',name:'aaa',href:''},
+                        {id:'',name:'bbb',href:''},
+                        {id:'',name:'ccc',href:''}
+                    ]},
+                    {name:'å·¥å…·',list:[
+                        {id:'312',name:'aaa',href:''},
+                        {id:'',name:'bbb',href:''},
+                        {id:'',name:'ccc',href:''}
+                    ]}
+                ]
+            }
+        }
+}
 const Connect = {template: '#temp-connect'}
+const Play = {template: '#temp-play'}
 //const Upload = {template:'./template/temp_upload.html'}
 //const Login = {template:'./template/temp_login.html'}
 
 
-
-// 2. ¶¨ÒåÂ·ÓÉ
+// 2. é…ç½®è·¯ç”±è·¯å¾„
 const routes = [
     {path: '/main-page', component: Main},
-    {path: '/movie', component: Movie},
+    {
+        path: '/movie', component: Movie,
+        //children:[
+        //    {path:'/movie/play',component:Play}
+        //]
+    },
+    {path:'/play',component:Play},
     {path: '/app_down', component: App_down},
     {path: '/connect', component: Connect},
     {path: '/', redirect: '/main-page'},
 ]
 
-// 3. ´´½¨ router ÊµÀý£¬È»ºó´« `routes` ÅäÖÃ
+// 3. å®žä¾‹åŒ–è·¯ç”±å¯¹è±¡ç”¨äºŽæ·»åŠ 
 const router = new VueRouter({
-    routes:routes
-    // £¨ËõÐ´£©Ïàµ±ÓÚ routes: routes
+    routes: routes
 })
 
 
-// 4. ´´½¨ºÍ¹ÒÔØ¸ùÊµÀý¡£
-// ¼ÇµÃÒªÍ¨¹ý router ÅäÖÃ²ÎÊý×¢ÈëÂ·ÓÉ£¬
-// ´Ó¶øÈÃÕû¸öÓ¦ÓÃ¶¼ÓÐÂ·ÓÉ¹¦ÄÜ
+// 4. å°†è·¯ç”±æ³¨å†Œåˆ°vueå®žä¾‹ä¸Š
+
 const app = new Vue({
-    router:router
+    router: router
 }).$mount('#vuemain')
 
+//new Vue({
+//    el: '#files-list',
+//    data(){
+//        return {}
+//    },
+//    computed: {
+//        file_movies: function () {
+//            return this.file_movies;
+//        }
+//    },
+//    methods: {}
+//})
 
-// ÏÖÔÚ£¬Ó¦ÓÃÒÑ¾­Æô¶¯ÁË£¡
+// ï¿½ï¿½ï¿½Ú£ï¿½Ó¦ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½
 //var temp_app = new Vue({})
 //var temp_connect = new Vue({})
 //var temp_login = new Vue({})
 //var temp_main = new Vue({})
 //var temp_upload = new Vue({})
-new Vue({
-    el:'#files-list',
-    data:{
-        file_movies:[
-            {name:'yk',img:'./img/vans.jpg',intro:'dsadasdas',link:'231'},
-            {name:'yk',img:'./img/vans.jpg',intro:'dsadasdas',link:'231'},
-            {name:'yk',img:'./img/vans.jpg',intro:'dsadasdas',link:'231'},
-            {name:'yk',img:'./img/vans.jpg',intro:'dsadasdas',link:'231'},
-            {name:'yk',img:'./img/vans.jpg',intro:'dsadasdas',link:'231'},
-            {name:'yk',img:'./img/vans.jpg',intro:'dsadasdas',link:'231'},
-            {name:'yk',img:'./img/vans.jpg',intro:'dsadasdas',link:'231'},
-            {name:'yk',img:'./img/vans.jpg',intro:'dsadasdas',link:'231'},
-            {name:'yk',img:'./img/vans.jpg',intro:'dsadasdas',link:'231'},
-            {name:'yk',img:'./img/vans.jpg',intro:'dsadasdas',link:'231'},
-            {name:'yk',img:'./img/vans.jpg',intro:'dsadasdas',link:'231'},
-            {name:'yk',img:'./img/vans.jpg',intro:'dsadasdas',link:'231'}
-        ]
-    },
-    render: (createElement) => createElement(Movie),
-    methods:{}
-})

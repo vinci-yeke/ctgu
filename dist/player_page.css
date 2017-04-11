@@ -1,18 +1,25 @@
 body {
   overflow-x: hidden;
 }
-article .player {
-  display: none;
+.video-js {
+  margin: 0 auto;
 }
-article .player .m {
+.lplayer-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.player .m {
   float: left;
   margin-left: auto;
   margin-right: auto;
 }
-article .player .vedio-btn-all {
+.player .vedio-btn-all {
   float: left;
 }
-article .player .vedio-btn-all ul li a {
+.player .vedio-btn-all ul li a {
   padding: 10px 5px;
 }
 footer {
@@ -26,15 +33,19 @@ footer {
   header .up-load-file .up-file {
     opacity: 0;
     position: absolute;
-    left: 45%;
+    left: 41%;
     z-index: 999;
     width: 50px;
+  }
+  .video-js {
+    width: 320px;
+    height: 192px;
   }
   .search-movie {
     display: none;
   }
   .nav .more-tip {
-    display: none ;
+    display: none;
   }
   .nav .share {
     display: none;
@@ -51,5 +62,9 @@ footer {
 @media (min-width: 1200px) {
   .phone-search {
     display: none;
+  }
+  .video-js {
+    width: 1280px;
+    height: 768px;
   }
 }

@@ -15,8 +15,8 @@
     <!--[if lt IE 9]>
     <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.lib/1.4.2/respond.min.js"></script>
-    <script src="./lib/video.min.js"></script>
     <![endif]-->
+    <script src="./lib/video.min.js"></script>
     <script src="./lib/vue.min.js"></script>
     <script src="./lib/vue.js"></script>
     <script src="./lib/vue-router.js"></script>
@@ -36,7 +36,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <router-link class="navbar-brand" to="/main-page">首页</router-link>
+                    <router-link class="navbar-brand" to="/main-page"><img alt="Brand" src="./img/vans.jpg">
+                    </router-link>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -103,13 +104,23 @@
     <router-view></router-view>
 
 </div>
-
+<div class="well" v-show="false">
+    <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+    <script>
+        var cloudTieConfig = {
+            url: document.location.href,
+            sourceId: "",
+            productKey: "42fa3ffcf06d4d5fb60e85afd98087c2",
+            target: "cloud-tie-wrapper"
+        };
+        var yunManualLoad = true;
+        Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+    </script>
+</div>
 
 <!--模版文件-->
-<template>
 
-
-</template>
 <template id="temp-main">
     <div>
         <div class="phone-search">
@@ -119,7 +130,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="搜索">
       <span class="input-group-btn">
-        <button class="btn btn-info" type="button">提交</button>
+        <button class="btn btn-info" type="button">搜索</button>
       </span>
                     </div>
                     <!-- /input-group -->
@@ -137,6 +148,7 @@
 
             <p class="text-right"><a class="btn btn-info btn-lg" href="#" role="button">世界很大 我们需要去看看</a></p>
         </div>
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12 col-md-4">
@@ -148,9 +160,10 @@
 
                             <p>...</p>
 
-                            <p class="text-right"><a href="#" class="btn btn-info " role="button">播放</a> <a href="#"
-                                                                                                            class="btn btn-danger"
-                                                                                                            role="button">下载</a>
+                            <p class="text-right"><a href="#" class="btn btn-info " role="button">播放</a> <a
+                                    href="#"
+                                    class="btn btn-danger"
+                                    role="button">下载</a>
                             </p>
                         </div>
                     </div>
@@ -164,9 +177,10 @@
 
                             <p>...</p>
 
-                            <p class="text-right"><a href="#" class="btn btn-info" role="button">播放</a> <a href="#"
-                                                                                                           class="btn btn-danger"
-                                                                                                           role="button">下载</a>
+                            <p class="text-right"><a href="#" class="btn btn-info" role="button">播放</a> <a
+                                    href="#"
+                                    class="btn btn-danger"
+                                    role="button">下载</a>
                             </p>
                         </div>
                     </div>
@@ -180,9 +194,10 @@
 
                             <p>...</p>
 
-                            <p class="text-right"><a href="#" class="btn btn-info" role="button">播放</a> <a href="#"
-                                                                                                           class="btn btn-danger"
-                                                                                                           role="button">下载</a>
+                            <p class="text-right"><a href="#" class="btn btn-info" role="button">播放</a> <a
+                                    href="#"
+                                    class="btn btn-danger"
+                                    role="button">下载</a>
                             </p>
                         </div>
                     </div>
@@ -193,48 +208,205 @@
     </div>
 </template>
 <template id="temp-vedio">
-    <div  id="files-list" class=" container-fluid">
-        <div class="row" v-for="file in file_movies">
-            <div class="col-xs-12 col-md-2"></div>
-            <div class="col-xs-12 col-md-2" v-bind:data-link="file.link">
-                <div class="panel panel-info">
-                    <div class="panel-heading">{{file.name}}</div>
-                    <div class="panel-body text-center"><img  class="" v-bind:src="file.img" alt=""/></div>
-                    <div class="panel-footer">{{file.intro}}</div>
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ol class="breadcrumb">
+                        <li class="active"><a href="#">热门</a></li>
+                        <li><a href="">经典</a></li>
+                        <li><a href="">动漫</a></li>
+                        <li><a href="">综艺</a></li>
+                        <li><a href="">体育</a></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <ol class="breadcrumb">
+                        <li class="active"><a href="#">home</a></li>
+                        <li><a href="">l</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">3</a></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <ol class="breadcrumb">
+                        <li class="active"><a href="#">home</a></li>
+                        <li><a href="">l</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">3</a></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row">
+                <div v-for="file in file_movies" class="col-xs-12 col-md-2" v-bind:data-link="file.link">
+                    <router-link to="/play">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">{{file.name}}</div>
+                            <div class="panel-body text-center"><img class="" v-bind:src="file.img" alt=""/>
+                            </div>
+                            <div class="panel-footer">{{file.intro}}</div>
+                        </div>
+                    </router-link>
+                </div>
+            </div>
+
+        </div>
+        <div class="text-right">
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</template>
+<template id="temp-app">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-4" v-for="sort in appSorts">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-success ">
+                        {{sort.name}}
+                    </a>
+                    <a href="#" class="list-group-item" v-for="app in sort.list">{{app.name}} <span
+                            class="badge"><span class="glyphicon glyphicon-save"></span></span></a>
                 </div>
             </div>
         </div>
     </div>
 </template>
+<template id="temp-play">
+       <div class="panel panel-default">
+           <div class="panel-heading">
+               <div class="page-header">
+                   <h3>片名： <small>Subtext for header</small></h3>
+               </div>
+           </div>
+           <div class="panel-body">
+               <div class="row player">
+                   <div class="col-xs-12 text-center">
+                       <div class="video-container">
+                           <video id="my-video" class="video-js vjs-big-play-centered"     controls preload="metadata" width="1280px" height="auto"
+                                  poster="" data-setup="{}">
+                               <source id="source" src="" type="video/mp4">
+                               <p class="vjs-no-js">
+                                   To view this video please enable JavaScript, and consider upgrading to a web browser that
+                                   <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                               </p>
+                           </video>
+                       </div>
+                   </div>
+               </div>
 
-<template id="temp-app">
-    <div>2</div>
+           </div>
+           <div class="panel-footer">
+               <div class="row">
+                   <div class="col-xs-12 "><div id="vedio-btn-all" class="vedio-btn-all">
+                       <ul id="vedio-play-list">
+                           <li><a href="javascript:;" class="vedio-btn" data-id="../fileup/img/3.mp4">点击播放2</a>
+                           </li>
+                           <li><a href="javascript:;" class="vedio-btn" data-id="../fileup/img/4.mp4">点击播放3</a>
+                           </li>
+                           <li><a href="javascript:;" class="vedio-btn" data-id="../fileup/img/5.mp4">点击播放4</a>
+                           </li>
+                           <li><a href="javascript:;" class="vedio-btn" data-id="../fileup/img/6.mp4">点击播放5</a>
+                           </li>
+                           <li><a href="javascript:;" class="vedio-btn" data-id="../fileup/img/7.mp4">点击播放2</a>
+                           </li>
+                           <li><a href="javascript:;" class="vedio-btn" data-id="../fileup/img/8.mp4">点击播放3</a>
+                           </li>
+                           <li><a href="javascript:;" class="vedio-btn" data-id="../fileup/img/9.mp4">点击播放4</a>
+                           </li>
+                           <li></li>
+                           <li></li>
+                       </ul>
+                   </div></div>
+               </div>
+           </div>
+   </div>
 </template>
 <template id="temp-connect">
-    <div>3</div>
-</template>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Hello, world!</h1>
 
-<!-- 页脚标签-->
-<footer>
-    <nav class="navbar navbar-default navbar-fixed-bottom">
-        <div class="container">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-12  text-left">友情链接</div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-md-4">1</div>
-                    <div class="col-xs-12 col-md-4">2</div>
-                    <div class="col-xs-12 col-md-4">3</div>
-                </div>
-            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid molestias optio quam? Amet, aspernatur
+                consequatur dignissimos dolorum, eius excepturi hic impedit obcaecati recusandae reiciendis
+                reprehenderit sequi tenetur ut vel, veniam.</p>
+
+            <p>...</p>
         </div>
-    </nav>
-</footer>
+    </div>
+</template>
+<!-- 页脚标签-->
+<!--<footer>-->
+<!--<nav class="navbar navbar-default navbar-fixed-bottom">-->
+<!--<div class="container">-->
+<!--<div class="container-fluid">-->
+<!--<div class="row">-->
+<!--<div class="col-xs-12  text-left">友情链接</div>-->
+<!--</div>-->
+<!--<div class="row">-->
+<!--<div class="col-xs-12 col-md-4">1</div>-->
+<!--<div class="col-xs-12 col-md-4">2</div>-->
+<!--<div class="col-xs-12 col-md-4">3</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</nav>-->
+<!--</footer>-->
 
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="lib/bootstrap.min.js"></script>
 <script src="./js/my_router.js"></script>
+<script>
+    var vedioSource = document.getElementById('source');
+    console.log(vedioSource);
+    vedioSource.setAttribute('src', sessionStorage.getItem('mp4'));
+    var myPlayer = '';
+    function playVideo(url) {
+        myPlayer = videojs('my-video');
+        console.log(myPlayer);
+        videojs("my-video").ready(function () {
+            var myPlayer = this;
+            console.log(myPlayer)
+//            myPlayer.progress(true);
+            myPlayer.src(url);
+            myPlayer.load(url);  //使video重新加载
+            myPlayer.play();
+        });
+    }
+    var vedioTotal = document.querySelector('#vedio-btn-all');
+    vedioTotal.addEventListener('click', function (e) {
+        if (e.target.getAttribute('class') == 'vedio-btn')
+            var that = e.target;
+        console.log('123');
+        var vedioId = that.getAttribute('data-id');
+        playVideo(vedioId);
+    })
+</script>
 </body>
 </html>
